@@ -1,5 +1,7 @@
 Copyright 2013 - The CyanogenMod Project
 
+Copyright 2017 - The LineageOS Project
+
 Device configuration for Galaxy S4 (Verizon)
 =====================================
 
@@ -19,4 +21,4 @@ Camera  | 13 MP, 4128 x 3096 pixels
 Release Date | May 2013
 
 
-![VZW Galaxy S4](http://wiki.cyanogenmod.org/images/thumb/6/6e/Jflte.png/321px-Jflte.png "VZW Galaxy S4")
+![VZW Galaxy S4](http://i.imgur.com/v088Fqx.png "VZW Galaxy S4")
