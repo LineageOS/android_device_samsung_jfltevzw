@@ -14,3 +14,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_jfltevzw.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_jfltevzw-eng \
+    lineage_jfltevzw-userdebug
