@@ -33,21 +33,19 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
 # Radio
-bin/efsks
-bin/ks
-bin/netmgrd
-bin/qcks
-bin/qmuxd
-bin/rild
-lib/libatparser.so
-lib/libfactoryutil.so
-lib/libomission_avoidance.so
-lib/libreference-ril.so
-lib/libril.so
-lib/librmnetctl.so
-lib/libsec-ril.so
-lib/libsecril-client.so
-lib/libxml.so
+vendor/bin/efsks
+vendor/bin/ks
+vendor/bin/netmgrd
+vendor/bin/qcks
+vendorbin/qmuxd
+vendor/lib/libatparser.so
+vendor/lib/libfactoryutil.so
+vendor/lib/libomission_avoidance.so
+vendor/lib/libreference-ril.so
+vendor/lib/librmnetctl.so
+vendor/lib/libsec-ril.so
+vendor/lib/libsecril-client.so
+vendor/lib/libxml.so
 vendor/lib/libconfigdb.so
 vendor/lib/libnetmgr.so
 vendor/lib/libril-qcril-hook-oem.so
