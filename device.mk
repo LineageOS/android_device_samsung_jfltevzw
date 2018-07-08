@@ -27,6 +27,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/jfltevzw/releasetools/loki.sh:install/bin/loki.sh
 
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2017-01-05
+
 ## device overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/jfltevzw/overlay
 
