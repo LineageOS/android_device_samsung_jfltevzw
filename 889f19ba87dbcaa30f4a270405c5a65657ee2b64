@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4afcdc8_3498ec45",
+        "filename": "device-proprietary-files.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 15173
+      },
+      "writtenOn": "2018-07-19T16:46:43Z",
+      "side": 1,
+      "message": "I think you forgot a thing.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 15
+      },
+      "revId": "889f19ba87dbcaa30f4a270405c5a65657ee2b64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
