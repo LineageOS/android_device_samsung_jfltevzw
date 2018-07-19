@@ -37,7 +37,7 @@ vendor/bin/efsks
 vendor/bin/ks
 vendor/bin/netmgrd
 vendor/bin/qcks
-vendorbin/qmuxd
+vendor/bin/qmuxd
 vendor/lib/libatparser.so
 vendor/lib/libfactoryutil.so
 vendor/lib/libomission_avoidance.so
