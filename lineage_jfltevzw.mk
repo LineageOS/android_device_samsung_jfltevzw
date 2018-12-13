@@ -8,7 +8,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
   TARGET_DEVICE=jfltevzw \
   PRIVATE_BUILD_DESC="jfltevzw-user 5.0.1 LRX22C I545VRSGPL1 release-keys"
 
-BUILD_FINGERPRINT := "Verizon/jfltevzw/jfltevzw:5.0.1/LRX22C/I545VRSGPL1:user/release-keys" \
+BUILD_FINGERPRINT := "Verizon/jfltevzw/jfltevzw:5.0.1/LRX22C/I545VRSGPL1:user/release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-verizon
 
