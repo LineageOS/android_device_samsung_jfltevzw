@@ -14,4 +14,3 @@ PRODUCT_GMS_CLIENTID_BASE := android-verizon
 
 PRODUCT_NAME := lineage_jfltevzw
 PRODUCT_DEVICE := jfltevzw
-
