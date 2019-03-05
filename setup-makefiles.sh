@@ -1,4 +1,7 @@
-# Copyright (C) 2011 The Android Open Source Project
+#!/bin/bash
+#
+# Copyright (C) 2013-2016 The CyanogenMod Project
+# Copyright (C) 2017-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,19 +15,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+set -e
 
-# Inherit from jfltevzw device
-$(call inherit-product, device/samsung/jfltevzw/device.mk)
+# Required!
+export DEVICE=jfltevzw
+export DEVICE_COMMON=jf-common
+export VENDOR=samsung
+export DEVICE_BRINGUP_YEAR=2013
 
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_jfltevzw
-PRODUCT_DEVICE := jfltevzw
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SCH-I545
-
-# Qualcomm
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig
+./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@
