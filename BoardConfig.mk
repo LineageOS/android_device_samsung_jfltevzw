@@ -12,22 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This file sets variables that control the way modules are built
-# thorughout the system. It should not be used to conditionally
-# disable makefiles (the proper mechanism to control what gets
-# included in a build is to use PRODUCT_PACKAGES in a product
-# definition file).
-#
+# Inherit from jf-common
+-include device/samsung/jf-common/BoardConfigCommon.mk
 
-# inherit from common JF
-include device/samsung/jf-common/BoardConfigCommon.mk
-
-# inherit from the proprietary version
+# Inherit from proprietary vendor
 -include vendor/samsung/jfltevzw/BoardConfigVendor.mk
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := jfltevzw,jflte
 
-# loki
+# Kernel
+TARGET_KERNEL_VARIANT_CONFIG := jf_vzw_defconfig
+
+# Loki
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jfltevzw/releasetools
