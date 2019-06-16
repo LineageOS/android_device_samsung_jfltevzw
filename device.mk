@@ -15,10 +15,16 @@
 # limitations under the License.
 #
 
-## (2) Also get non-open-source specific aspects if available
+# Inherit from jf-common
+$(call inherit-product, device/samsung/jf-common/jf-common.mk)
+
+# Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/jfltevzw/jfltevzw-vendor.mk)
 
-# loki
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += device/samsung/jfltevzw/overlay
+
+# Loki
 PRODUCT_PACKAGES += \
     loki_tool \
     loki.sh \
@@ -28,15 +34,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/jfltevzw/releasetools/loki.sh:install/bin/loki.sh
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml
+
 # System Properties
 $(call inherit-product, device/samsung/jfltevzw/system_prop.mk)
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2017-01-05
-
-## device overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/jfltevzw/overlay
-
-# Inherit from jf-common
-$(call inherit-product, device/samsung/jf-common/jf-common.mk)
