@@ -1,6 +1,6 @@
 Copyright 2013 - The CyanogenMod Project
 
-Copyright 2017 - The LineageOS Project
+Copyright 2017-2019 - The LineageOS Project
 
 Device configuration for Galaxy S4 (Verizon)
 =====================================
