@@ -20,7 +20,7 @@
 # definition file).
 #
 
-# inherit from common JF
+# inherit from jf-common
 include device/samsung/jf-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
@@ -29,7 +29,10 @@ include device/samsung/jf-common/BoardConfigCommon.mk
 # Assert
 TARGET_OTA_ASSERT_DEVICE := jfltevzw,jflte
 
-# loki
+# Kernel
+TARGET_KERNEL_VARIANT_CONFIG := jf_vzw_defconfig
+
+# Loki
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jfltevzw/releasetools
 
 # Properties
