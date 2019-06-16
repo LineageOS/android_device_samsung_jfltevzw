@@ -1,0 +1,2 @@
+add_lunch_combo lineage_jfltevzw-eng
+add_lunch_combo lineage_jfltevzw-userdebug
