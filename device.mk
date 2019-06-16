@@ -27,6 +27,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/jfltevzw/releasetools/loki.sh:install/bin/loki.sh
 
+# System Properties
+$(call inherit-product, device/samsung/jfltevzw/system_prop.mk)
+
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2017-01-05
