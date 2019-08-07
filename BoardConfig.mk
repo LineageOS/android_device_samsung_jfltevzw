@@ -20,7 +20,7 @@
 -include vendor/samsung/jfltevzw/BoardConfigVendor.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := jfltevzw,jflte
+TARGET_OTA_ASSERT_DEVICE := jfltevzw
 
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := jf_vzw_defconfig
