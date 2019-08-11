@@ -26,7 +26,8 @@ TARGET_OTA_ASSERT_DEVICE := jfltevzw
 TARGET_KERNEL_VARIANT_CONFIG := jf_vzw_defconfig
 
 # Loki
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jfltevzw/releasetools
+TARGET_NEEDS_LOKI := true
+TARGET_LOKI_ABOOT_IMAGE := vendor/firmware/jfltevzw/radio/aboot.mbn
 
 # Manifest
 DEVICE_MANIFEST_FILE += device/samsung/jfltevzw/manifest.xml
