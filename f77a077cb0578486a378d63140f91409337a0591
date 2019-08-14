@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41adb76b_f89c591c",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 15548
+      },
+      "writtenOn": "2019-08-14T09:04:29Z",
+      "side": 1,
+      "message": "s/TAGET_NEEDS_LOKI/TARGET_NEEDS_LOKI",
+      "revId": "f77a077cb0578486a378d63140f91409337a0591",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
