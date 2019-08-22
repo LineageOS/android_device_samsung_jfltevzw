@@ -1,5 +1,9 @@
 # Add device specific blobs here
 
+# Aboot
+# For Loki on build hosts
+/dev/block/platform/msm_sdcc.1/by-name/aboot:/dev/null
+
 # Audio
 vendor/lib/libacdbloader.so
 vendor/lib/libaudcal.so
