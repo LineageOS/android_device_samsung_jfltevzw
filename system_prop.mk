@@ -12,3 +12,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=1 \
     ro.config.vc_call_vol_steps=7 \
     DEVICE_PROVISIONED=1
+
+# Set default locale
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.locale=en-GB
