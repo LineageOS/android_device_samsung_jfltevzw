@@ -27,6 +27,3 @@ TARGET_KERNEL_VARIANT_CONFIG := jf_vzw_defconfig
 
 # Loki
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jfltevzw/releasetools
-
-# Manifest
-DEVICE_MANIFEST_FILE += device/samsung/jfltevzw/manifest.xml
