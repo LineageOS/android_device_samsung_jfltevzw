@@ -9,14 +9,24 @@ RECSHA1=$2
 BOOTSIZE=$3
 BOOTSHA1=$4
 
-egrep -q -f /system/etc/loki_bootloaders /proc/cmdline
+if getrop ro.twrp.version
+  egrep -q -f /system/etc/loki_bootloaders /proc/cmdline
+else
+  egrep -q -f /mnt/system/system/etc/loki_bootloaders /proc/cmdline
+fi
+
 if [ $? -eq 0 ]; then
   need_lok=1
-  export C=/data/local/tmp/loki_tmpdir
+  export C=/tmp/loki_tmpdir
   rm -rf $C
   mkdir -p $C
   dd if=/dev/block/platform/msm_sdcc.1/by-name/recovery of=$C/recovery.lok
-  /system/bin/loki_tool unlok $C/recovery.lok $C/recovery
+  if getrop ro.twrp.version
+  then
+    /system/bin/loki_tool unlok $C/recovery.lok $C/recovery
+  else
+    /mnt/system/system/bin/loki_tool unlok $C/recovery.lok $C/recovery
+  fi
 else
   export C=/dev/block/platform/msm_sdcc.1/by-name/
 fi
@@ -26,15 +36,28 @@ if ! applypatch -c EMMC:$C/recovery:$RECSIZE:$RECSHA1; then
     log -t recovery "recovery is outdated. unloki-ing all the things"
     dd if=/dev/block/platform/msm_sdcc.1/by-name/boot of=$C/boot.lok
     dd if=/dev/block/platform/msm_sdcc.1/by-name/aboot of=$C/aboot.img
-    /system/bin/loki_tool unlok $C/boot.lok $C/boot
+    if getprop ro.twrp.version
+    then
+      /system/bin/loki_tool unlok $C/boot.lok $C/boot
+    else
+      /mnt/system/system/bin/loki_tool unlok $C/boot.lok $C/boot
+    fi
   fi
-
   log -t recovery "Installing new recovery image"
-  applypatch -b /system/etc/recovery-resource.dat EMMC:$C/boot:$BOOTSIZE:$BOOTSHA1 EMMC:$C/recovery $RECSHA1 $RECSIZE $BOOTSHA1:/system/recovery-from-boot.p || exit 1
-
+  if getprop ro.twrp.version
+  then
+    applypatch -b /system/etc/recovery-resource.dat EMMC:$C/boot:$BOOTSIZE:$BOOTSHA1 EMMC:$C/recovery $RECSHA1 $RECSIZE $BOOTSHA1:/system/recovery-from-boot.p || exit 1
+  else
+    applypatch -b /mnt/system/system/etc/recovery-resource.dat EMMC:$C/boot:$BOOTSIZE:$BOOTSHA1 EMMC:$C/recovery $RECSHA1 $RECSIZE $BOOTSHA1:/mnt/system/system/recovery-from-boot.p || exit 1
+  fi
   if [ $need_lok -eq 1 ]; then
-    /system/bin/loki_tool patch recovery $C/aboot.img $C/recovery $C/recovery.lok || exit 1
-    /system/bin/loki_tool flash recovery $C/recovery.lok || exit 1
+    if getprop ro.twrp.version
+    then
+      /system/bin/loki_tool patch recovery $C/aboot.img $C/recovery $C/recovery.lok || exit 1
+      /system/bin/loki_tool flash recovery $C/recovery.lok || exit 1
+    else
+      /mnt/system/system/bin/loki_tool patch recovery $C/aboot.img $C/recovery $C/recovery.lok || exit 1
+      /mnt/system/system/bin/loki_tool flash recovery $C/recovery.lok || exit 1
   fi
 
 else
