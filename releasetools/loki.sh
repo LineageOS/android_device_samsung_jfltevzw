@@ -8,16 +8,24 @@
 # Run loki patch on boot.img for locked bootloaders, found in loki_bootloaders
 #
 
-egrep -q -f /system/etc/loki_bootloaders /proc/cmdline
+getprop ro.bootloader | grep I545VRUAMDK
 if [ $? -eq 0 ];then
   echo '[*] Locked bootloader version detected.'
   export C=/tmp/loki_tmpdir
   mkdir -p $C
   dd if=/dev/block/platform/msm_sdcc.1/by-name/aboot of=$C/aboot.img
+  if getprop ro.twrp.version
+  then
   echo '[*] Patching boot.img to with loki.'
   /system/bin/loki_tool patch boot $C/aboot.img /tmp/boot.img $C/boot.lok || exit 1
   echo '[*] Flashing modified boot.img to device.'
   /system/bin/loki_tool flash boot $C/boot.lok || exit 1
+  else
+  echo '[*] Patching boot.img to with loki.'
+  /mnt/system/system/bin/loki_tool patch boot $C/aboot.img /tmp/boot.img $C/boot.lok || exit 1
+  echo '[*] Flashing modified boot.img to device.'
+  /mnt/system/system/bin/loki_tool flash boot $C/boot.lok || exit 1
+  fi
   rm -rf $C
 else
   echo '[*] Unlocked bootloader version detected.'
