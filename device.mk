@@ -27,7 +27,6 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/jfltevzw/overlay
 PRODUCT_PACKAGES += \
     loki_tool \
     loki.sh \
-    loki_bootloaders \
     recovery-transform.sh
 
 PRODUCT_COPY_FILES += \
