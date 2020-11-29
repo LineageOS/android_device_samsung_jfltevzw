@@ -1,4 +1,4 @@
-# Add device specific blobs here
+## Unless otherwise stated, all blobs are extracted from I545VRSGPL1_I545VZWGPL1_VZW
 
 # Audio
 vendor/lib/libacdbloader.so
